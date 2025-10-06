@@ -1,6 +1,10 @@
-﻿namespace Grocery.Core.Interfaces.Repositories;
+﻿using Grocery.Core.Models;
 
-public interface IProductCategoryRepository
+namespace Grocery.Core.Interfaces.Repositories
 {
-    
+
+    public interface IProductCategoryRepository
+    {
+        public List<ProductCategory> GetAll();
+    }
 }

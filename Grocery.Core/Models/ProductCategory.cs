@@ -1,17 +1,15 @@
-﻿namespace Grocery.Core.Models;
-
-public class ProductCategory
+﻿namespace Grocery.Core.Models
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public int ProductId { get; set; }
-    public int CategoryId { get; set; }
-    
-    public ProductCategory(int id, string name, int productId, int categoryId)
+    public class ProductCategory : Model
     {
-        Id = id;
-        Name = name;
-        ProductId = productId;
-        CategoryId = categoryId;
+        public int ProductId { get; set; }
+        public int CategoryId { get; set; }
+        
+        public ProductCategory(int id, string name, int productId, int categoryId) : base(id, name)
+        {
+            ProductId = productId;
+            CategoryId = categoryId;
+        }
+        public Product Product { get; set; } = new(0, "None", 0);
     }
 }
