@@ -10,6 +10,6 @@
             ProductId = productId;
             CategoryId = categoryId;
         }
-        public Product Product { get; set; } = new(0, "None", 0);
+        public Product Product { get; set; } = new(0, "None", 0, 0);
     }
 }
