@@ -1,6 +1,9 @@
-﻿namespace Grocery.Core.Interfaces.Services;
+﻿using Grocery.Core.Models;
 
-public interface ICategoryService
+namespace Grocery.Core.Interfaces.Services
 {
-    
+    public interface ICategoryService
+    {
+        List<Category> GetAll();
+    }
 }
