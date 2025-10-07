@@ -20,17 +20,30 @@
                     <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
                 </CollectionView.ItemsLayout>
 
+                <CollectionView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="600"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="400"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Naam van het product" Grid.Column="0" FontAttributes="Bold"/>
+                        <Label Text="Prijs" Grid.Column="1" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                        <Label Text="Voorraad" Grid.Column="2" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                    </Grid>
+                </CollectionView.Header>
+                
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="m:GroceryListItem">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="4*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="20"/>
-                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="600"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="400"/>
                             </Grid.ColumnDefinitions>
                             <Label Grid.Column="0" Text="{Binding Product.Name}" VerticalOptions="Center"/>
-                            <Label Grid.Column="1" Text="{Binding Product.Stock, StringFormat='{}{0:F0} op voorraad'}" HorizontalOptions="End">
+                            <Label Grid.Column="1" Text="{Binding Product.Price, StringFormat='€ {0:F2}'}"/>
+                            <Label Grid.Column="2" Text="{Binding Product.Stock, StringFormat='{}{0:F0} op voorraad'}" HorizontalOptions="End">
                                 <Label.Triggers>
                                     <DataTrigger TargetType="Label" Binding="{Binding Stock}" Value="0">
                                         <Setter Property="Text" Value="niet op voorraad" />
