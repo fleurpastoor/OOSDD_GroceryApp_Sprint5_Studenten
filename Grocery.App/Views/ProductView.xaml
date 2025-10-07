@@ -26,7 +26,7 @@
                     </Grid.ColumnDefinitions>
                     <Label Text="Naam van het product" Grid.Column="0" FontAttributes="Bold"/>
                     <Label Text="Voorraad" Grid.Column="1" HorizontalTextAlignment="End" FontAttributes="Bold"/>
-                    <Label Text="Prijs" Grid.Column="2" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                    <Label Text="Prijs" Grid.Column="2" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
                     <Label Text="THT datum" Grid.Column="3" HorizontalTextAlignment="End" FontAttributes="Bold"/>
                 </Grid>
             </CollectionView.Header>
@@ -47,7 +47,7 @@
                                 </DataTrigger>
                             </Label.Triggers>
                         </Label>
-                        <Label Grid.Column="2" Text="{Binding Price, StringFormat='€ {0:F2}'}"/>
+                        <Label Grid.Column="2" Text="{Binding Price, StringFormat='€ {0:F2}'}" HorizontalOptions="Center"/>
                         <Label Grid.Column="3" Text="{Binding ShelfLife}" HorizontalOptions="End"/>
                     </Grid>
                 </DataTemplate>
