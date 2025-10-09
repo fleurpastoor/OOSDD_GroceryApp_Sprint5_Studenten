@@ -8,6 +8,7 @@ namespace Grocery.Core.Services
     {
         private readonly IProductCategoryRepository _productCategoryRepository;
         private readonly IProductRepository _productRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
         public ProductCategoryService(IProductCategoryRepository productCategoryRepository, IProductRepository productRepository)
         {
@@ -25,6 +26,12 @@ namespace Grocery.Core.Services
             List<ProductCategory> productCategories = _productCategoryRepository.GetAll().Where(c => c.CategoryId == id).ToList();
             FillService(productCategories);
             return productCategories;
+        }
+        
+        public List<ProductCategory> Add(ProductCategory category)
+        {
+            _productCategoryRepository.Add(category);
+            return _productCategoryRepository.GetAll();
         }
         
         private void FillService(List<ProductCategory> productCategory)
