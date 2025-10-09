@@ -13,6 +13,14 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+# JetBrains Rider
+.idea/
+*.sln.iml
+.idea_modules/
+.idea_workspace.xml
+.idea/.idea.*
+.idea/.idea_modules/
+
 # Mono auto generated files
 mono_crash.*
 
